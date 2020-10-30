@@ -1,11 +1,8 @@
-
-
 require 'pry'
 
 $letterToNum = {}
 $numToLetter = {}
 i = 0
-
 alphabet_array = [*'a'..'z']
 
 alphabet_array.each do |lclet|
@@ -15,22 +12,16 @@ alphabet_array.each do |lclet|
 end
 
 def runCaesar(string, move)
-
   stringArr = string.split("")
   newStringArr = []
 
   stringArr.each do |letter|
-
     uc = false	
-    newLetter = ""
-      
-    puts letter
-
+    newLetter = ""  
     if letter.match(/[^A-Za-z]/)
       newStringArr.push(letter)
-    
+
     else
-    
       if letter =~ /[A-Z]/ 
     	  uc = true
     	  letter = letter.downcase
@@ -44,8 +35,6 @@ def runCaesar(string, move)
         newLetter= newLetter.upcase
       end
 
-  #    binding.pry
-
       newStringArr.push(newLetter)
 
     end  
@@ -53,13 +42,11 @@ def runCaesar(string, move)
 
   outStr = newStringArr.join("")
   puts outStr
-end
 
+end
 
 puts "Please enter a string:"
 string  = gets.chomp
-
 runCaesar(string,5)
-
 
 exit
